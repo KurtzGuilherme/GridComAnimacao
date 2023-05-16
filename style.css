@@ -1,0 +1,248 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+
+  --ff-body: 'Staatliches', cursive;
+  --bd-page: hsla(233, 100%, 97%, 1);
+  --bd-logo: hsla(218, 17%, 62%, 1);
+  --fs-main: clamp(0.5rem, 0.5rem + 3vw, 2rem);
+}
+
+body {
+  font-family: var(--ff-body);
+  font-size: 1.6rem;
+}
+
+@media (max-width:700px) {
+
+  nav  {
+    display: none;
+  }
+
+  section  {
+    display: none;
+  }
+
+  header {
+    padding: 3.2rem 0;
+    background: var(--bd-logo);
+    color: #FFFFFF;
+  
+    text-align: center;
+  }
+  
+  header img {
+    margin: 3.2rem 0;
+  }
+
+  .page {
+    max-width: 38.4rem;
+    margin: 0 auto;
+
+    background: var(--bd-page);
+  }
+
+  main {
+    display: grid;
+    gap: 3.2rem;
+
+    padding: 1.4rem 3.2rem;
+  }
+
+  main p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2rem;
+    line-height: 1.8rem;
+
+    text-align: center;
+
+    color: #23053A;
+
+    margin-bottom: 6.3rem;
+  }
+
+  .card {
+    position: relative;
+  }
+
+  .card img {
+    width: 100%;
+    height: auto;
+
+    border-radius: 2rem;
+
+    animation: downtop 500ms;
+  }
+
+  .card h2 {
+    position: absolute;
+    top: 1.6rem;
+    left: 19.2rem;
+
+    color: #4A4E69;
+  }
+
+  .card h2 span {
+    border-radius: 2rem;
+    background-color: #FEEAFA;
+    line-height: 3.4rem;
+    font-size: var(--fs-main);
+    letter-spacing: 0.05em;
+
+    padding: 0 2.4rem;
+
+    width: fit-content;
+    height: 3.4rem;
+
+    display: inline-flex;
+    align-items: center;
+
+    animation: topdown 3000ms;
+  }
+
+}
+
+@media (min-width:700px) {
+
+  header {
+    display: none;
+  }
+
+  main {
+    display: none;
+  }
+
+  nav {
+    background: var(--bd-logo);
+    color: #FFFFFF;
+    text-align: center;
+  }
+  
+  nav p {
+    width: 37.7rem;
+    padding: 3.2rem 4.8rem 12.5rem 5.4rem;
+  
+    line-height: 2rem;
+    font-family: 'Roboto';
+    color: #FFFFFF;
+  }
+  
+  nav img {
+    margin: 3.2rem 0;
+    animation: topdown 2000ms;
+  }
+
+  .page {
+    display: flex;
+    width: 128rem;
+
+    background: #FFFFFF;
+  }
+
+  .title {
+    display: flex;
+    align-items: center;
+  
+    width: 100%;
+    padding: 0.8rem 0;
+  
+    background: #CBC0D3;
+  }
+  
+  .title h2 {
+    margin: auto 8.5rem;
+  
+    font-size: 4rem;
+    line-height: 3.4rem;
+    color: #FFFFFF;
+  
+    letter-spacing: 0.05em;
+    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+  }
+
+  section  {
+    display: grid;
+    gap: 3.2rem;
+    
+    padding: 6.4rem 8.1rem  5rem 9.8rem;
+
+    animation: downtop 2000ms;
+
+    grid-template-areas: 
+    "A B C"
+    "D B F"
+    "D E F";
+  }
+
+  section div:nth-child(1) {
+    grid-area: A;
+  }
+  section div:nth-child(2) {
+    grid-area: B;
+  }
+  section div:nth-child(3) {
+    grid-area: C;
+  }
+  section div:nth-child(4) {
+    grid-area: D;
+  }
+  section div:nth-child(5) {
+    grid-area: E;
+  }
+  section div:nth-child(6) {
+    grid-area: F;
+  }
+
+  .footer{
+    display: flex;
+    flex-direction: column;
+    margin-top: 5rem;
+
+    width: 100%;
+
+    font-family: 'Open Sans';
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  .footer span{
+    font-weight: 700;
+  }
+}
+
+@media (max-width:375px) {
+  .card h2 {
+    left: 14rem;
+  }
+}
+
+@keyframes topdown {
+  0% {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes downtop {
+
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
